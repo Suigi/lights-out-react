@@ -9,9 +9,14 @@ it('should render without crashing', () => {
 
 it('should contain switches', () => {
     const underTest = shallow(<SwitchBoard rows={3} cols={3} />)
-    const switches = underTest.find(<Switch />)
+    const switches = underTest.find(Switch)
     expect(
         switches
     ).toHaveLength(9)
+})
 
+it('should have class SwitchBoard', () => {
+    expect(
+        shallow(<SwitchBoard />).hasClass('SwitchBoard')
+    ).toBe(true)
 })
