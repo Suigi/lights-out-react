@@ -13,12 +13,23 @@ it('renders a checkbox', () => {
     ).toHaveLength(1)
 })
 
-it ('renders a selected checkbox if state is on', () => {
+it('renders a selected checkbox if state is on', () => {
     const underTest = shallow(<Switch isOn={true} />)
-    const checkbox = 
     expect(
         underTest
             .find({type:'checkbox'})
             .props().checked
     ).toBe(true)
+})
+
+it('calls toggle callback on change', () => {
+    let wasCalled = false
+    const callback = () => { wasCalled = true }
+
+    const underTest = shallow(<Switch isOn={true} toggle={callback} />)
+    underTest
+        .find({type:'checkbox'})
+        .simulate('change', {target: {checked: false}})
+
+    expect(wasCalled).toBe(true)
 })

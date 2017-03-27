@@ -8,7 +8,7 @@ it('should render without crashing', () => {
 })
 
 it('should contain switches', () => {
-    const underTest = shallow(<SwitchBoard rows={3} cols={3} />)
+    const underTest = shallow(<SwitchBoard rows={3} cols={3} litIndices={{}} toggle={()=>{}}/>)
     const switches = underTest.find(Switch)
     expect(
         switches

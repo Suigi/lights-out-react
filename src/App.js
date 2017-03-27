@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import SwitchBoard from './components/SwitchBoard'
+import PlayableSwitchBoard from './components/PlayableSwitchBoard'
 import './App.css';
 
 class App extends Component {
@@ -11,7 +11,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Lights-Out with React</h2>
         </div>
-        <SwitchBoard rows={5} cols={5} />
+        <PlayableSwitchBoard />
       </div>
     );
   }
